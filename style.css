@@ -1,0 +1,410 @@
+/* Shalini Jagili — Editorial / Archive portfolio
+   Mostly-white palette with ink, cobalt and warm coral accents.
+*/
+:root {
+  --paper: #f8f8f5;
+  --white: #ffffff;
+  --ink: #111317;
+  --muted: #73777f;
+  --line: #dedfdc;
+  --blue: #3657ff;
+  --coral: #ff725e;
+  --soft-blue: #e9edff;
+  --max: 1240px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; }
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  opacity: .035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+.topbar {
+  height: 78px;
+  max-width: var(--max);
+  margin: auto;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 5;
+}
+.brand {
+  font: 700 24px/1 "Space Grotesk", sans-serif;
+  letter-spacing: -1px;
+}
+.brand span { color: var(--blue); }
+nav { display: flex; gap: 34px; font-size: 13px; }
+nav a { color: #4f535b; }
+nav a:hover { color: var(--blue); }
+.status {
+  font: 500 10px "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #5d6168;
+}
+.status i {
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--coral);
+  margin-right: 7px;
+}
+
+.hero {
+  min-height: 720px;
+  max-width: var(--max);
+  margin: auto;
+  padding: 100px 28px 80px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 90px;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-copy { position: relative; z-index: 2; max-width: 760px; }
+.eyebrow, .kicker {
+  font: 500 11px "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: #656a72;
+}
+.eyebrow span { color: var(--blue); margin-right: 14px; }
+.hero h1 {
+  margin: 28px 0 25px;
+  font: 700 clamp(76px, 12vw, 160px)/.78 "Space Grotesk", sans-serif;
+  letter-spacing: -.075em;
+}
+.hero h1 em {
+  font-style: normal;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--ink);
+}
+.hero-lead {
+  max-width: 560px;
+  margin: 0;
+  font-size: 17px;
+  color: #5f636a;
+}
+.hero-lead strong { color: var(--ink); }
+.scroll-cue {
+  margin-top: 58px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font: 500 11px "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.arrow {
+  width: 38px; height: 38px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: .2s;
+}
+.scroll-cue:hover .arrow { background: var(--ink); color: white; transform: translateY(3px); }
+
+.hero-side {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 20px 0;
+}
+.vertical-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .14em;
+  color: #8a8e95;
+}
+.hero-index {
+  font: 600 13px "DM Mono", monospace;
+  text-align: right;
+}
+.hero-index span { color: var(--blue); }
+.hero-orbit {
+  position: absolute;
+  border: 1px solid #d9dce6;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.orbit-one { width: 580px; height: 580px; right: 6%; top: 8%; }
+.orbit-two { width: 360px; height: 360px; right: 15%; top: 23%; border-color: #e8d7d3; }
+.orbit-one::after {
+  content: "";
+  position: absolute;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--blue);
+  right: 85px; top: 12px;
+}
+
+.section-grid {
+  max-width: var(--max);
+  margin: auto;
+  padding-left: 28px;
+  padding-right: 28px;
+  display: grid;
+  grid-template-columns: 90px minmax(300px, 1fr) minmax(280px, 430px);
+  gap: 24px;
+}
+.section-no {
+  font: 500 11px "DM Mono", monospace;
+  color: var(--blue);
+  padding-top: 7px;
+}
+h2 {
+  font: 700 clamp(48px, 7vw, 92px)/.9 "Space Grotesk", sans-serif;
+  letter-spacing: -.055em;
+  margin: 0;
+}
+h2 span { color: #9da0a6; }
+
+.intro {
+  padding-top: 130px;
+  padding-bottom: 150px;
+  border-top: 1px solid var(--line);
+}
+.intro-text {
+  padding-top: 10px;
+  color: #4d5159;
+  font-size: 16px;
+}
+.intro-text p { margin: 0 0 22px; }
+.intro-text .muted { color: #8a8e94; font-size: 14px; }
+.intro-text b { color: var(--ink); }
+
+.education {
+  background: var(--white);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 120px 0 130px;
+}
+.education-head { margin-bottom: 72px; }
+.side-note {
+  margin: 5px 0 0;
+  font: 500 10px/1.7 "DM Mono", monospace;
+  letter-spacing: .1em;
+  color: #8c9097;
+  text-align: right;
+}
+.timeline {
+  max-width: 1080px;
+  margin: auto;
+  padding: 0 28px;
+  display: grid;
+  gap: 2px;
+}
+.edu-card {
+  min-height: 245px;
+  display: grid;
+  grid-template-columns: 120px 1fr 130px;
+  gap: 28px;
+  padding: 38px 28px;
+  border: 1px solid #e1e2e0;
+  background: var(--paper);
+  position: relative;
+  overflow: hidden;
+  transition: transform .25s, border-color .25s;
+}
+.edu-card:hover { transform: translateX(7px); border-color: #bfc3ca; }
+.edu-card.current { background: var(--soft-blue); border-color: #cdd4ff; }
+.edu-meta { display: flex; flex-direction: column; gap: 17px; }
+.number {
+  font: 600 14px "DM Mono", monospace;
+  color: var(--blue);
+}
+.tag {
+  font: 500 9px "DM Mono", monospace;
+  letter-spacing: .1em;
+  color: #888d94;
+}
+.type {
+  margin: 0 0 7px;
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .12em;
+  color: #777b83;
+}
+.edu-body h3 {
+  font: 600 clamp(25px, 3vw, 38px)/1 "Space Grotesk", sans-serif;
+  letter-spacing: -.035em;
+  margin: 0 0 9px;
+}
+.edu-body .place {
+  margin: 0 0 25px;
+  color: #777b83;
+  font-size: 13px;
+}
+.edu-body p:last-child { margin: 0; color: #555960; font-size: 14px; }
+.edu-mark {
+  align-self: end;
+  justify-self: end;
+  font: 700 62px/.75 "Space Grotesk", sans-serif;
+  letter-spacing: -.07em;
+  color: #d5d8dd;
+}
+.current .edu-mark { color: #b8c1ff; }
+.edu-mark span { font-size: .65em; }
+
+.campus {
+  padding: 125px 0 140px;
+  background: var(--paper);
+}
+.campus-head { margin-bottom: 75px; }
+.photo-grid {
+  max-width: var(--max);
+  padding: 0 28px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.3fr .8fr;
+  grid-template-rows: 330px 330px;
+  gap: 16px;
+}
+.photo {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background: #ddd;
+}
+.photo img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform .65s cubic-bezier(.2,.8,.2,1);
+}
+.photo:hover img { transform: scale(1.045); }
+.photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 42%, rgba(0,0,0,.72));
+  pointer-events: none;
+}
+.photo-large { grid-row: 1 / span 2; }
+.photo-school { grid-column: 2; }
+.photo-tall img { object-position: center 58%; }
+.photo-school img { object-position: center 48%; }
+figcaption {
+  position: absolute;
+  z-index: 2;
+  left: 25px;
+  right: 25px;
+  bottom: 21px;
+  color: white;
+  display: grid;
+  gap: 3px;
+}
+figcaption span {
+  font: 500 9px "DM Mono", monospace;
+  letter-spacing: .13em;
+  opacity: .72;
+}
+figcaption b {
+  font: 600 22px/1.1 "Space Grotesk", sans-serif;
+}
+figcaption small { opacity: .78; font-size: 12px; }
+
+.closing {
+  max-width: var(--max);
+  margin: auto;
+  padding: 140px 28px 120px;
+  position: relative;
+}
+.closing-line {
+  height: 1px;
+  width: 100%;
+  background: var(--ink);
+  margin-bottom: 48px;
+}
+.closing h2 { margin: 22px 0 25px; }
+.closing-text {
+  max-width: 450px;
+  color: #686c74;
+  margin: 0;
+}
+.footer-sign {
+  margin-top: 95px;
+  display: flex;
+  justify-content: space-between;
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .1em;
+  color: #777b83;
+}
+footer {
+  max-width: var(--max);
+  margin: auto;
+  padding: 24px 28px 30px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  color: #888c93;
+  font: 10px "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+@media (max-width: 800px) {
+  .topbar { padding: 0 20px; }
+  nav { display: none; }
+  .status { font-size: 9px; }
+  .hero {
+    min-height: 650px;
+    padding: 70px 20px 60px;
+    grid-template-columns: 1fr 40px;
+  }
+  .hero h1 { font-size: clamp(70px, 20vw, 120px); }
+  .hero-lead { font-size: 15px; }
+  .orbit-one { width: 400px; height: 400px; right: -180px; top: 15%; }
+  .orbit-two { width: 260px; height: 260px; right: -100px; top: 27%; }
+  .section-grid { grid-template-columns: 38px 1fr; padding-left: 20px; padding-right: 20px; }
+  .section-grid > .side-note { display: none; }
+  .intro { padding-top: 85px; padding-bottom: 95px; }
+  .intro-text { grid-column: 2; }
+  .education, .campus { padding: 85px 0 95px; }
+  .education-head, .campus-head { margin-bottom: 48px; }
+  .timeline { padding: 0 20px; }
+  .edu-card { grid-template-columns: 55px 1fr; min-height: 0; padding: 28px 20px; }
+  .edu-mark { display: none; }
+  .photo-grid {
+    padding: 0 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 300px 300px;
+  }
+  .photo-large { grid-row: auto; }
+  .photo-school { grid-column: auto; }
+  .closing { padding: 90px 20px; }
+  .footer-sign { margin-top: 65px; flex-direction: column; gap: 8px; }
+  footer { padding: 20px; }
+}
+
+@media (max-width: 460px) {
+  .hero { min-height: 590px; }
+  .hero-side { display: none; }
+  .hero { display: block; }
+  .hero h1 { margin-top: 22px; }
+  .section-grid { grid-template-columns: 28px 1fr; gap: 14px; }
+  h2 { font-size: 48px; }
+  .edu-card { grid-template-columns: 1fr; gap: 15px; }
+  .edu-meta { flex-direction: row; align-items: center; }
+}
